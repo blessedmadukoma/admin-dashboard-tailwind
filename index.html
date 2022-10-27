@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+
+</head>
+
+<body class="bg-gray-200">
+
+  <section class="flex">
+    <!-- left nav section -->
+    <section class="bg-indigo-900 w-56">
+      <section class="bg-indigo-800 uppercase text-gray-200 tracking-wide font-bold p-5">Super Corp</section>
+      <section class="p-5 text-xs font-bold text-gray-200">PAGES</section>
+      <section class="p-5 space-y-6 capitalize">
+        <div class="flex space-x-2">
+          <img src="./assets/dashboard.png" class="w-5 h-5" alt="">
+          <span class="text-gray-200 text-sm tracking-wide">Dashboard</span>
+        </div>
+        <div class="flex space-x-2">
+          <img src="./assets/customers.png" class="w-5 h-5" alt="">
+          <span class="text-gray-200 text-sm tracking-wide">Customers</span>
+        </div>
+        <div class="flex space-x-2">
+          <img src="./assets/orders.png" class="w-5 h-5" alt="">
+          <span class="text-gray-200 text-sm tracking-wide">orders</span>
+        </div>
+        <div class="flex space-x-2">
+          <img src="./assets/campaign.png" class="w-5 h-5" alt="">
+          <span class="text-gray-200 text-sm tracking-wide">campaigns</span>
+        </div>
+        <div class="flex space-x-2">
+          <img src="./assets/messages.png" class="w-5 h-5" alt="">
+          <span class="text-gray-200 text-sm tracking-wide">messages</span>
+        </div>
+        <div class="flex space-x-2">
+          <img src="./assets/apps.png" class="w-5 h-5" alt="">
+          <span class="text-gray-200 text-sm tracking-wide">Apps</span>
+        </div>
+        <div class="flex space-x-2">
+          <img src="./assets/settings.png" class="w-5 h-5" alt="">
+          <span class="text-gray-200 text-sm tracking-wide">settings</span>
+        </div>
+      </section>
+    </section>
+    <!-- end of left nav section -->
+
+    <!-- main content section -->
+    <section class="flex-1">
+      <!-- top nav sectoin -->
+      <nav class="flex px-2 py-0.5 h-16 bg-white items-center justify-between">
+        <!-- left section -->
+        <section class="flex p-3 md:w-3/4 sm:w-1/3 px-3 space-x-1">
+          <img src="./assets/person.png" class="h-10 w-10" alt="">
+          <div class="p-2 font-semibold">Madukoma Blessed</div>
+        </section>
+        <!-- end of left section -->
+
+        <!-- right section -->
+        <section class="md:w-1/4 sm:w-2/3 flex p-4 space-x-2 items-center">
+          <img src="./assets/search.png" class="w-7 h-7 bg-gray-200 rounded-full p-1" alt="">
+          <img src="./assets/message.png" class="w-7 h-7 bg-gray-200 rounded-full p-1" alt="">
+          <img src="./assets/warning.png" class="w-7 h-7 bg-gray-200 rounded-full p-1" alt="">
+          <div class="mx-2 text-indigo-500 font-semibold tracking-wide">
+            Logout
+          </div>
+        </section>
+        <!-- end of right section -->
+      </nav>
+      <!-- end of top nav section -->
+
+      <!-- site banner section -->
+      <section class="bg-indigo-200 m-5 p-5">
+        <div class="font-bold text-4xl text-gray-900">Good Morning, Super Inc.👋🏿</div>
+        <div class="font-semibold mt-3">Here is what's happening with your projects today:</div>
+      </section>
+      <!-- end of site banner section -->
+
+      <!-- Cards section -->
+      <section class="flex space-x-6 m-5">
+        <!-- left section -->
+        <section class="bg-white w-1/2 p-4">
+          <img src="./assets/wallet.png" class="w-10 h-10" alt="">
+          <div class="block mt-2 font-bold text-xl text-gray-700">super plus</div>
+          <div class="block mt-4 font-bold text-sm uppercase text-gray-400">Sales</div>
+
+          <section class="mt-4">
+            <span class="font-bold text-3xl">$24,750</span>
+            <span class="bg-green-500 rounded-full p-1 text-xs font-semibold text-white align-super">+49%</span>
+          </section>
+
+          <!-- chartjs section -->
+          <canvas id="chart1" class="pt-4"></canvas>
+
+          <!-- end of left section -->
+
+        </section>
+        <!-- end of left section -->
+
+        <!-- right section -->
+        <section class="bg-white w-1/2 p-4">
+          <img src="./assets/wallet.png" class="w-10 h-10" alt="">
+          <div class="block mt-2 font-bold text-xl text-gray-700">super plus</div>
+          <div class="block mt-4 font-bold text-sm uppercase text-gray-400">Sales</div>
+
+          <section class="mt-4">
+            <span class="font-bold text-3xl">$21,685</span>
+            <span class="bg-red-500 rounded-full p-1 text-xs font-semibold text-white align-super">-29%</span>
+          </section>
+
+          <!-- chartjs section -->
+          <canvas id="chart2" class="pt-4"></canvas>
+        </section>
+        <!-- end of right section -->
+
+      </section>
+      <!-- end of cards section -->
+
+      <!-- additionals section -->
+      <section class="flex space-x-6 m-5">
+        <section id="left" class="md:w-1/3 bg-white p-4 divide-y divide-gray-200">
+          <section class="pb-4 font-semibold">Top Countries</section>
+          <canvas id="chart5" class="pt-4"></canvas>
+        </section>
+        <section id="right" class="md:w-2/3 bg-white p-4 divide-y divide-gray-200">
+          <section class="pb-4 font-semibold">Top Channels</section>
+          <section class="pt-8">
+            <table class="table-auto border">
+              <thead class="uppercase text-xs tracking-wide font-semibold text-gray-500 bg-gray-100 m-4">
+                <tr class="p-2 border-b">
+                  <th>Source</th>
+                  <th class="px-10 py-2">Visitors</th>
+                  <th class="px-10 py-2">Revenues</th>
+                  <th class="px-10 py-2">Sales</th>
+                  <th class="px-10 py-2">Conversion</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b">
+                  <td class="flex py-2 px-10 space-x-1 items-center">
+                    <img src="./assets/youtube.png" class="w-6 h-6" alt="">
+                    <span class="text-gray-700">Youtube</span>
+                  </td>
+                  <td class="px-10">2.4k</td>
+                  <td class="text-green-500 px-10">$16,000</td>
+                  <td class="px-10">340</td>
+                  <td class="text-blue-500 px-10">4.9%</td>
+                </tr>
+
+                <tr class="border-b">
+                  <td class="flex py-2 px-10 space-x-1 items-center">
+                    <img src="./assets/facebook.png" class="w-6 h-6" alt="">
+                    <span class="text-gray-700">Facebook</span>
+                  </td>
+                  <td class="px-10">2.4k</td>
+                  <td class="text-green-500 px-10">$16,000</td>
+                  <td class="px-10">340</td>
+                  <td class="text-blue-500 px-10">4.9%</td>
+                </tr>
+
+                <tr class="border-b">
+                  <td class="flex py-2 px-10 space-x-1 items-center">
+                    <img src="./assets/github.png" class="w-6 h-6" alt="">
+                    <span class="text-gray-700">Github</span>
+                  </td>
+                  <td class="px-10">2.4k</td>
+                  <td class="text-green-500 px-10">$16,000</td>
+                  <td class="px-10">340</td>
+                  <td class="text-blue-500 px-10">4.9%</td>
+                </tr>
+                
+                <tr class="border-b">
+                  <td class="flex py-2 px-10 space-x-1 items-center">
+                    <img src="./assets/instagram.png" class="w-6 h-6" alt="">
+                    <span class="text-gray-700">Instagram</span>
+                  </td>
+                  <td class="px-10">2.4k</td>
+                  <td class="text-green-500 px-10">$16,000</td>
+                  <td class="px-10">340</td>
+                  <td class="text-blue-500 px-10">4.9%</td>
+                </tr>
+
+              </tbody>
+            </table>
+          </section>
+        </section>
+      </section>
+    </section>
+    <!-- end of main content section -->
+  </section>
+
+
+  <!-- chart.js -->
+  <script>
+    const ctx = document.getElementById('chart1').getContext('2d');
+    const ctx2 = document.getElementById('chart2').getContext('2d');
+    // const ctx3 = document.getElementById('chart3').getContext('2d');
+    // const ctx4 = document.getElementById('chart4').getContext('2d');
+    const ctx5 = document.getElementById('chart5').getContext('2d');
+
+    // chart1 code
+    const myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+          label: '# of Votes',
+          data: [12, 19, 3, 5, 2, 3],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)'
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+
+
+    // chart2 code
+    const myChart2 = new Chart(ctx2, {
+      type: 'line',
+      data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+          label: '# of Votes',
+          data: [12, 19, 3, 5, 2, 3],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)'
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+
+    /*
+    // chart3 code
+    const myChart3 = new Chart(ctx3, {
+      type: 'doughnut',
+      data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+          label: '# of Votes',
+          data: [12, 19, 3, 5, 2, 3],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)'
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+
+    // chart4 code
+    const myChart4 = new Chart(ctx4, {
+      type: 'radar',
+      data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+          label: '# of Votes',
+          data: [12, 19, 3, 5, 2, 3],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)'
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+
+    */
+
+    // chart5 code
+    const myChart5 = new Chart(ctx5, {
+      type: 'doughnut',
+      data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+          label: '# of Votes',
+          data: [12, 19, 3, 5, 2, 3],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)'
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          // leave empty to remove the scales or straight lines
+        }
+      }
+    });
+
+  </script>
+</body>
+
+</html>
